@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PryLaboratorioSP1SignorileBautista
 {
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
