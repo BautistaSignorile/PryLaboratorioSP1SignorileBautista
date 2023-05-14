@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.cmbModulo = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cmdAceptar = new System.Windows.Forms.Button();
             this.lblModulo = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Black;
             this.lblUsuario.Location = new System.Drawing.Point(29, 24);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(57, 17);
@@ -51,18 +52,26 @@
             // 
             // cmbModulo
             // 
+            this.cmbModulo.ForeColor = System.Drawing.Color.Navy;
             this.cmbModulo.FormattingEnabled = true;
+            this.cmbModulo.Items.AddRange(new object[] {
+            "ADM",
+            "SIST",
+            "COM",
+            "VTA"});
             this.cmbModulo.Location = new System.Drawing.Point(137, 108);
             this.cmbModulo.Name = "cmbModulo";
             this.cmbModulo.Size = new System.Drawing.Size(100, 21);
             this.cmbModulo.TabIndex = 1;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtUsuario.ForeColor = System.Drawing.Color.Navy;
+            this.txtUsuario.Location = new System.Drawing.Point(137, 24);
+            this.txtUsuario.MaxLength = 10;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 2;
             // 
             // cmdAceptar
             // 
@@ -72,12 +81,13 @@
             this.cmdAceptar.TabIndex = 3;
             this.cmdAceptar.Text = "Aceptar";
             this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
             // lblModulo
             // 
             this.lblModulo.AutoSize = true;
             this.lblModulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblModulo.ForeColor = System.Drawing.Color.Black;
             this.lblModulo.Location = new System.Drawing.Point(29, 112);
             this.lblModulo.Name = "lblModulo";
             this.lblModulo.Size = new System.Drawing.Size(54, 17);
@@ -88,7 +98,7 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblContraseña.ForeColor = System.Drawing.Color.Black;
             this.lblContraseña.Location = new System.Drawing.Point(29, 65);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(81, 17);
@@ -96,12 +106,15 @@
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox2
+            // txtContraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtContraseña.ForeColor = System.Drawing.Color.Navy;
+            this.txtContraseña.Location = new System.Drawing.Point(137, 65);
+            this.txtContraseña.MaxLength = 10;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '#';
+            this.txtContraseña.Size = new System.Drawing.Size(100, 20);
+            this.txtContraseña.TabIndex = 6;
             // 
             // cmdCancelar
             // 
@@ -111,6 +124,7 @@
             this.cmdCancelar.TabIndex = 7;
             this.cmdCancelar.Text = "Cancelar";
             this.cmdCancelar.UseVisualStyleBackColor = true;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
             // frmLogin
             // 
@@ -118,13 +132,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 153);
             this.Controls.Add(this.cmdCancelar);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblModulo);
             this.Controls.Add(this.cmdAceptar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.cmbModulo);
             this.Controls.Add(this.lblUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -136,11 +153,11 @@
 
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.ComboBox cmbModulo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button cmdAceptar;
         private System.Windows.Forms.Label lblModulo;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button cmdCancelar;
     }
 }
