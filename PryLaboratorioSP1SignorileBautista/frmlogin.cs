@@ -13,6 +13,7 @@ namespace PryLaboratorioSP1SignorileBautista
 {
     public partial class frmLogin : Form
     {
+        int errores = 2;
         public frmLogin()
         {
             InitializeComponent();
@@ -42,9 +43,12 @@ namespace PryLaboratorioSP1SignorileBautista
                 MessageBox.Show("Datos ingresados invalidos");
                 txtUsuario.Clear();
                 txtContraseña.Clear();
+                errores++;
             }
+            if (errores == 2) ;
+            MessageBox.Show("Demasiados intentos, el formulario se cerrara.");
+            this.Close();
         }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
